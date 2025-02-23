@@ -4,7 +4,6 @@ class Solution
     public int solution(int []A, int []B)
     {
         int answer = 0;
-        //Integer[] listB = Arrays.stream(B).boxed().toArray(Integer[]::new);
         Arrays.sort(A);
         Arrays.sort(B);
         for(int i = 0; i < A.length; i++) {
