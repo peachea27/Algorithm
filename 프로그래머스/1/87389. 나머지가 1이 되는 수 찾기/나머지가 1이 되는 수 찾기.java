@@ -1,15 +1,9 @@
-import java.util.*;
 class Solution {
     public int solution(int n) {
-        int answer = 0;
-        ArrayList<Integer> arr = new ArrayList<>();
-        for( int i = 1; i < n; i++){
-           if( n % i == 1){
-            arr.add(i);
-         } 
+        if(n % 2 != 0) return 2;
+        for(int i = 3; i <= Math.sqrt(n); i++){
+            if((n-1)%i == 0) return i;
         }
-        Collections.sort(arr);
-        answer = arr.get(0);
-        return answer;
+        return n-1;
     }
 }
