@@ -1,30 +1,14 @@
-import java.util.*;
-
+import java.util.Arrays;
 class Solution {
     public long solution(long n) {
         long answer = 0;
-        String nStr = String.valueOf(n);
-        long[] numArr = new long[nStr.length()];
-        StringBuilder sb = new StringBuilder();
-        
-        for (int i = 0; i <nStr.length(); i++){
-           numArr[i] = Character.getNumericValue(nStr.charAt(i));            
+        String[] sp = Long.toString(n).split("");
+        int count = sp.length - 1;
+        Arrays.sort(sp);
+        while(count >= 0){
+            answer += Integer.parseInt(sp[count])*Math.pow(10,count);
+            count--;
         }
-      
-        for (int i = 0; i < numArr.length; i++) {
-            for(int j = i+1; j <numArr.length; j++){
-                if(numArr[j] > numArr[i]){
-                    long temp = numArr[i];
-                    numArr[i] = numArr[j];
-                    numArr[j] = temp;
-                }
-            }
-        }
-        
-        for ( long num : numArr){
-            sb.append(String.valueOf(num));
-        }
-        answer = Long.parseLong(sb.toString());
         return answer;
         }
     }
