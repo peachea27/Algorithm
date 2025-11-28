@@ -1,10 +1,6 @@
 class Solution {
-    public long solution(long n) {
-        long answer = 0;
-        long square = (long)Math.sqrt(n);
-        if(square * square == n) {
-            return (square + 1)*(square + 1);
-        }
-        return -1;
+    public double solution(long n) {
+        double sq = Math.sqrt(n);
+        return (sq%1 == 0)? Math.pow((double)sq+1,2):-1;
     }
 }
